@@ -8,7 +8,7 @@ __all__ = [
 ]
 
 __title__ = "pypackage"
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __author__ = "Rok Šikonja"
 __email__ = "sikonjarok@gmail.com"
 __license__ = "MIT License"

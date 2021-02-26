@@ -32,7 +32,7 @@ setup(
     python_requires=">=3.6, <4",
     install_requires=["numpy"],
     project_urls={
-        "Bug Reports": "https://github.com/roksikonja/roksikonja-template/issues",
-        "Source": "https://github.com/roksikonja/roksikonja-template/",
+        "Bug Reports": "https://github.com/roksikonja/pyproject/issues",
+        "Source": "https://github.com/roksikonja/pyproject/",
     },
 )

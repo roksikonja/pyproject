@@ -5,7 +5,7 @@ In the ```README.md``` a quick summary with workflow is described.
 For more refer to the documentation.
 Commands are given to be executed in Powershell.
 
-Some commands are added just to have some quick reference
+Some commands are added just to have a quick reference if forgotten.
 
 
 ## Project Structure
@@ -110,9 +110,11 @@ Some commands are added just to have some quick reference
 
         # deploy to testpypi using token in ~/.pypirc
         twine upload --repository testpypi dist/*
+        twine upload --skip-existing --repository testpypi dist/*
 
         # deploy to pypi using token in ~/.pypirc
         twine upload dist/*
+        twine upload --skip-existing dist/*
 
         # install from testpy
         # install dependencies manually
@@ -188,3 +190,12 @@ Documentation using Sphinx.
 
         # ignore files
         .gitignore
+
+
+## TODO
+
+Add the following best practices.
+* Type checking with ```mypy```.
+* Python packaging for scienfic computing with ```conda```.
+  * Replace ```setup.py``` and ```pip```.
+* Add CI/CD.
