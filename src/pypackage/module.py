@@ -6,7 +6,7 @@ import numpy as np
 from pypackage.base import compute_norm
 
 
-def euclidean_distance(x: np.ndarray, y: np.ndarray):
+def euclidean_distance(x: np.ndarray, y: np.ndarray) -> float:
     """Computes the Euclidean distance between points x and y given in Cartesian coordinates.
 
     Args:
