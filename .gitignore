@@ -1,0 +1,14 @@
+.idea/
+
+build/
+dist/
+*.egg-info/
+*.egg
+*.py[cod]
+__pycache__/
+*.so
+*~
+
+venv/
+docs/build/
+.pytest_cache/
