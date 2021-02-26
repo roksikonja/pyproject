@@ -1,90 +1,127 @@
-# Python Project Structure
+# Template Python Project
 
 This is a template project for Python. 
 In the ```README.md``` a quick summary with workflow is described.
 For more refer to the documentation.
+Commands are given to be executed in Powershell.
+
+Some commands are added just to have some quick reference
+
 
 ## Project Structure
 
+        # get tree structure in WSL2
+        cd /mnt/c/roksikonja/pyproject
+        tree -I "venv|bin|dist|build|*.py[cod]|*.egg-info|__pycache__|.pytest_cache"
 
+        .
+        ├── LICENSE.txt
+        ├── MANIFEST.in
+        ├── README.md
+        ├── docs
+        │   ├── Makefile
+        │   ├── make.bat
+        │   └── source
+        │       ├── _static
+        │       ├── _templates
+        │       ├── conf.py
+        │       ├── index.rst
+        │       └── *.rst
+        ├── pyproject.toml  # build configuration
+        ├── setup.cfg  # static configuration
+        ├── setup.py  # dynamic configuration
+        ├── src
+        │   └── pypackage
+        │       ├── __about__.py
+        │       ├── __init__.py
+        │       ├── __main__.py  # entry point for python -m pypackage
+        │       ├── base.py
+        │       ├── google_style.py
+        │       └── module.py
+        └── tests
+            └── test_template.py
+
+
+## Python
+
+        # create project directory
         mkdir pyproject
         cd pyproject
 
         # venv setup
         python -m venv venv
+
+        # activate venv
         .\venv\Scripts\activate
-        python -m pip install --upgrade pip setuptools wheel pytest
-        python -m pip install --upgrade pip
-        
-        pip install --upgrade setuptools wheel pytest
         deactivate
 
-        cd C:\roksikonja\pyproject
-
-        # vcs
-        git init
-        .gitignore
-
-        # install from source
-        python -m pip install --editable .
+        # update or install build and packaging tools
+        python -m pip install --upgrade pip
+        pip install --upgrade setuptools wheel
+                
+        # install from source for development
         pip install --editable .
 
+        # install from pypi for usage as library
+        pip install roksikonja-template  # specified in setup.py/name
+
         # run package as script
-        # as defined in pypackage/__main__.py
         python -m pypackage
 
+        # freeze dependecies of the whole Python environment
+        pip freeze > requirements.txt
+        pip install -r requirements.txt
         
-        cd /mnt/c/roksikonja/pyproject
-        tree -I "venv|bin|dist|build|*.py[cod]|*.egg-info|__pycache__"
-
         # check installation
         pip list
         pyproject 0.0.1 c:\roksikonja\pyproject\src
 
-        # test
-        python -m pytest tests/
-        # without cache
-        python -m pytest -p no:cacheprovider tests/
+
+### Testing
+
+        # install pytest
+        pip install --upgrade pytest
+
+        # run test
+        pytests
+        pytest tests/
+        pytest -p no:cacheprovider tests/ # without cache
+
+
+### Building
+
+        # install build tools
+        pip install --upgrade build
 
         # build
-        python -m pip install --upgrade build
-        C:\roksikonja\pyproject\venv\Scripts\python.exe -m build
         python -m build
-
         python setup.py sdist bdist_wheel
-        twine check dist/*
-
-        # deploy to testpypi using token in .pypirc
-        python -m pip install --upgrade twine
-        
-        # check builds
-        twine check dist/*
-        twine upload --repository testpypi dist/*
-
-        twine upload dist/*
-        python -m twine upload --repository testpypi dist/*
-
-        # install
-        python -m pip install --index-url https://test.pypi.org/simple/ --no-deps pyproject
-        pip install -i https://test.pypi.org/simple/ roksikonja-template
-
-        pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple roksikonja-template
-
-
-* Files:
-    * MANIFEST.in: Specify what to include/exclude in the source distribution, not affecting binary distribution (wheel)
-        * [Guide](https://packaging.python.org/guides/using-manifest-in/#using-manifest-in)
-        * Automatically added: py modules and packages, scripts, data_files/package_data, licence, test/test*.py, setup.*, README.*, pyproject.toml, MANIFEST.in
-
-### Build
-
-        # source build
-        python setup.py sdist
-
-        # wheel
-        python setup.py bdist_wheel
 
         # builds in dist/
+
+
+### Publishing
+
+        # install twine publishing tool
+        pip install --upgrade twine
+
+        # verify builds
+        twine check dist/*
+
+        # deploy to testpypi using token in ~/.pypirc
+        twine upload --repository testpypi dist/*
+
+        # deploy to pypi using token in ~/.pypirc
+        twine upload dist/*
+
+        # install from testpy
+        # install dependencies manually
+        pip install -i https://test.pypi.org/simple/ roksikonja-template --no-deps
+
+        # install dependencies from pypy
+        pip install \
+            --index-url https://test.pypi.org/simple/ \
+            --extra-index-url https://pypi.org/simple roksikonja-template
 
 
 ## Documentation
@@ -136,3 +173,18 @@ Documentation using Sphinx.
         # of a file, module, function, class
         """Docstring starts immediately after three double quotes.
         """
+
+
+## Version Control
+
+        # initialize git project with main branch
+        git init -b main
+        git remote add origin https://github.com/roksikonja/pyproject.git
+
+        # workflow
+        git add <file_name>
+        git commit -m "message"
+        git push origin main
+
+        # ignore files
+        .gitignore
