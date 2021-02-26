@@ -28,6 +28,7 @@ Some commands are added just to have a quick reference if forgotten.
         │       ├── index.rst
         │       └── *.rst
         ├── pyproject.toml  # build configuration
+        ├── requirements.txt
         ├── setup.cfg  # static configuration
         ├── setup.py  # dynamic configuration
         ├── src
