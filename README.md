@@ -1,32 +1,10 @@
 # Python Project Structure
 
-
-## References
-
-Adapted from ```https://github.com/pypa/sampleproject```.
-* [Publishing well-formed Python packages](https://www.youtube.com/watch?v=_b8D4v7YIME)
-* [Shipping your first Python package and automating future publishing](https://www.youtube.com/watch?v=P3dY3uDmnkU)
-* [Inside the Cheeseshop: How Python Packaging Works](https://www.youtube.com/watch?v=AQsZsgJ30AE)
-* [Python Packaging Guide](https://packaging.python.org)
-* [PyPI Publishing](https://realpython.com/pypi-publish-python-package/)
+This is a template project for Python. 
+In the ```README.md``` a quick summary with workflow is described.
+For more refer to the documentation.
 
 ## Project Structure
-        .
-        ├── LICENSE.txt
-        ├── MANIFEST.in
-        ├── README.md
-        ├── docs
-        ├── pyproject.toml
-        ├── setup.cfg
-        ├── setup.py
-        ├── src
-        │   └── pypackage
-        │       ├── __about__.py
-        │       ├── __init__.py
-        │       └── base.py
-        ├── structure.txt
-        └── tests
-        └── test_template.py
 
 
         mkdir pyproject
@@ -40,6 +18,8 @@ Adapted from ```https://github.com/pypa/sampleproject```.
         
         pip install --upgrade setuptools wheel pytest
         deactivate
+
+        cd C:\roksikonja\pyproject
 
         # vcs
         git init
@@ -91,20 +71,12 @@ Adapted from ```https://github.com/pypa/sampleproject```.
         pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple roksikonja-template
 
 
-
-        # documentation
-        python -m pip install --ugrade sphinx
-
-        mkdir docs
-        cd docs
-        sphinx-quickstart
-
 * Files:
     * MANIFEST.in: Specify what to include/exclude in the source distribution, not affecting binary distribution (wheel)
         * [Guide](https://packaging.python.org/guides/using-manifest-in/#using-manifest-in)
         * Automatically added: py modules and packages, scripts, data_files/package_data, licence, test/test*.py, setup.*, README.*, pyproject.toml, MANIFEST.in
 
-# Build
+### Build
 
         # source build
         python setup.py sdist
@@ -113,3 +85,54 @@ Adapted from ```https://github.com/pypa/sampleproject```.
         python setup.py bdist_wheel
 
         # builds in dist/
+
+
+## Documentation
+
+Documentation using Sphinx.
+
+### Installation
+
+        mkdir docs
+        cd docs
+
+        # install Sphinx
+        pip install --upgrade sphinx
+
+        # markdown support
+        pip install --upgrade recommonmark
+
+        # generate documentation
+        sphinx-quickstart
+        
+        # update conf.py in docs/source
+
+
+### Usage            
+
+        # add page in Markdown/RestructuredText
+        page.*
+
+        # add to toc
+        Page Title <page.*>
+
+        # add in *.rst file to include docstrings from code
+        .. automodule:: <module_name>
+        .. autoclass:: <class_name>
+
+        # generate html
+        make html  # .\make.bat html  # powershell
+        
+        # view documentation
+        cd .\docs\build\html
+        start firefox index.html
+
+
+### Documenting Code
+
+        # add package directory to sys.path in conf.py
+
+        # in each file add a docstring on the first line
+        # of a file, module, function, class
+        """Docstring starts immediately after three double quotes.
+        """
