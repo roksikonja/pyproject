@@ -28,3 +28,6 @@ The guidelines for structuring, packaging, publishing and documenting are adapte
 * Style.
     * `Google style guide <https://github.com/google/styleguide/blob/gh-pages/pyguide.md#38-comments-and-docstrings>`_
     * `Google Style docstrings <https://www.sphinx-doc.org/en/1.7/ext/example_google.html>`_
+
+* Type Checking.
+    * `Type-checked Python in the real world <https://www.youtube.com/watch?v=pMgmKJyWKn8>`_

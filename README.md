@@ -177,6 +177,14 @@ Documentation using Sphinx.
         """Docstring starts immediately after three double quotes.
         """
 
+## Type Checking
+
+      # install mypy
+      pip install mypy
+      
+      # check types
+      mypy src -v  
+
 
 ## Version Control
 
@@ -196,7 +204,6 @@ Documentation using Sphinx.
 ## TODO
 
 Add the following best practices.
-* Type checking with ```mypy```.
-* Python packaging for scienfic computing with ```conda```.
+* Python packaging for scientific computing with ```conda```.
   * Replace ```setup.py``` and ```pip```.
 * Add CI/CD.
