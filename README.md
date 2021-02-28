@@ -207,24 +207,23 @@ Documentation using Sphinx.
 Python packaging for scientific computing with ```conda```.
 * [Cheat Sheet](https://conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf)
   
+        # ensure conda is in path
+        conda --version
+        conda info
+        conda update    
 
-    # ensure conda is in path
-    conda --version
-    conda info
-    conda update    
+        # create conda (virtual) environment using python 3.x
+        conda create --name <venv_name> python=3.x
+        conda activate <venv_name>
+        conda deactivate
 
-    # create conda (virtual) environment using python 3.x
-    conda create --name <venv_name> python=3.x
-    conda activate <venv_name>
-    conda deactivate
+        # list conda environments
+        conda env list
+        conda remove env -n <venv_name>
+        
+        # list installed packages
+        cond list
 
-    # list conda environments
-    conda env list
-    conda remove env -n <venv_name>
-    
-    # list installed packages
-    cond list
-
-    # install pip in conda environment
-    conda install pip
-    pip install -e .
+        # install pip in conda environment
+        conda install pip
+        pip install -e .
