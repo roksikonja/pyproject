@@ -36,3 +36,7 @@ The guidelines for structuring, packaging, publishing and documenting are adapte
 
 * CI with GitHub Actions.
     * `skyfield <https://github.com/skyfielders/python-skyfield/blob/master/.github/workflows/ci.yml>`_
+
+
+* Conda Package Manager.
+    * `Cheat Sheet <https://conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf>`_
