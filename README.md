@@ -227,3 +227,32 @@ Python packaging for scientific computing with ```conda```.
         # install pip in conda environment
         conda install pip
         pip install -e .
+
+
+# TODO
+
+* https://github.com/ubernostrum/webcolors
+* tox
+* docs
+* formatting + flake8
+* https://www.b-list.org/weblog/2020/jan/05/packaging/
+* test coverage
+* https://www.b-list.org/weblog/2020/feb/03/how-im-testing-2020/
+
+# Code Quality
+
+Configurations added to ```setup.cfg``` and ```pyproject.toml```.
+
+    pip install pydocstyle flake8 mypy pylint isort coverage
+
+    pytest tests
+    mypy
+    black .
+    flake8
+    pylint src/ scripts/
+    isort .
+    pydocstyle src/ tests/
+
+    # docs
+    cd docs
+    .\make.bat html -b spelling

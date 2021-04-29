@@ -19,6 +19,8 @@ The guidelines for structuring, packaging, publishing and documenting are adapte
     * `Shipping your first Python package and automating future publishing <https://www.youtube.com/watch?v=P3dY3uDmnkU>`_
     * `PyPI Publishing <https://realpython.com/pypi-publish-python-package/>`_
 
+* Testing.
+    * `Unit and Integration Testing in Python <https://realpython.com/python-testing/>`_
 
 * Documentation.
     * `Your code should document itself! <https://www.youtube.com/watch?v=JQ8RQru-Y9Y>`_
